@@ -1,3 +1,7 @@
+This file was borrowed from the GitHub 
+BlueDot project for testing of Markdown
+code block scrolling.
+
 Sample Readme in rst format
 ===========================
 Taken from Blue Dot project
