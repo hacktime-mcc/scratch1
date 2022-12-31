@@ -9,6 +9,21 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "java"
+}
+
+group = 'scratch1'
+version = '0.1.0'
+
+jar {
+    manifest {
+        attributes(
+                /*
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                */
+                'Main-Class': 'scratch1.App'
+        )
+    }
 }
 
 repositories {
@@ -33,3 +48,20 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+/*
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+ */

@@ -3,12 +3,24 @@
  */
 package scratch1;
 
+import scratch1.subpackage.Thing;
+
+import java.util.logging.Logger;
+
 public class App {
+    private static final Logger log = Logger.getLogger(App.class.getName());
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
+        log.severe("My severe message");
+        log.warning("My warning message");
+        log.info("My info message");
+        log.config("My config message");
+        log.fine("My fine message");
+
         System.out.println(new App().getGreeting());
+        Thing.performSomeAction();
     }
 }
